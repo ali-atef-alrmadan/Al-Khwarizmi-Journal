@@ -31,7 +31,7 @@ class ResaerchController extends Controller
             ->where('status_research','=',"reviewed")
             ->select('users.name','research.id','research.research_title','research.abstract','ratings.decision','ratings.suggest')
             ->get();
-// dd($review);
+
         return view('editor.decision',compact('review'))->with('page_name','Decision');
     }
     // البحث في المنشورات
