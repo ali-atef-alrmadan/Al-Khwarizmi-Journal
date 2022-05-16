@@ -1,0 +1,163 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@layer components{
+    /* link hover effect start */
+        .link-hover-effect{
+            transition: color 0.3s ease;
+        }
+        .link-hover-effect::after{
+            content: '';
+            @apply bg-indigo-500;
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            top: calc(100% + 0.25rem);
+            left: 0;
+            transform-origin: center;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .link-hover-effect:hover{
+            @apply text-indigo-500;
+        }
+        .link-hover-effect:hover::after{
+            transform: scaleX(1);
+        }
+    /* link hover effect end */
+
+    /* button hover effect start */
+        .button-hover-effect{
+            transition: border 0.3s ease;
+        }
+        .button-hover-effect:hover{
+            @apply border-indigo-800 rounded-none;
+        }
+        .button-hover-effect::after{
+            content: '';
+            @apply bg-indigo-800;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom:0;
+            left: 0;
+            transform-origin: top;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+        .button-hover-effect:hover::after{
+            transform-origin: bottom;
+            transform: scaleY(1);
+        }
+    /* button hover effect end */
+
+    /* shape-1 style start */
+        .shape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 2;
+        }
+        .shape svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+        }
+        .shape .shape-fill {
+            fill: #F9FAFB;
+        }
+        .shape2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 2;
+        }
+        .shape2 svg {
+            position: relative;
+            display: block;
+            width: calc(142% + 1.3px);
+            height: 158px;
+        }
+        .shape2 .shape-fill {
+            fill: #F9FAFB;
+        }
+    /* shape-1 style end */
+
+    /*  shadow style start */
+        .inner-shadow-card{
+            box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05),
+                        inset -5px -5px 5px rgba(255,255,255,0.5),
+                        5px 5px 5px rgba(0,0,0,0.05),
+                        -5px -5px 5px rgba(255,255,255,0.5);
+        }
+        .drop-shadow-box{
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    /*  shadow style start */
+
+    /* feade-in effect start */
+        .feaders{
+            position: relative;
+            transform: translateY(150px);
+            opacity: 0;
+            transition: all 2s ease;
+        }
+        .feaders.fade-in{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    /* feade-in effect end */
+    .fCh{
+        @apply bg-indigo-500 text-white;
+    }
+    .sCh{
+        @apply bg-gray-50 text-gray-800;
+    }
+
+    /* Table styling */
+    .tableContanier{
+        @apply w-full md:w-4/5 mx-auto;
+    }
+    .tableContanier .tableContent{
+        @apply w-full;
+    }
+    .tableContanier .msg{
+        @apply text-3xl text-gray-300 text-center mt-20;
+    }
+    .tableContanier .tableContent table{
+        @apply w-full min-w-max table-fixed;
+    }
+    .tableContanier .tableContent table .tableHead{
+        @apply bg-indigo-500 text-white;
+    }
+    .tableContanier .tableContent table .tableBody{
+        @apply odd:bg-gray-50 even:bg-indigo-50;
+    }
+    .tableContanier .tableContent table th, .tableContanier .tableContent table td{
+        @apply text-right p-2 border-b border-gray-300 w-40 overflow-x-auto;
+    }
+    .fix{
+        @apply max-h-20 overflow-y-auto scrollbar scrollbar-thumb-gray-300 scrollbar-track-gray-100;
+
+    }
+};
+body ,html{
+    overflow-x: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance:none;
+}
+select {
+    background-position-x: 5px;
+}
