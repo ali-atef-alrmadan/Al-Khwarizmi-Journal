@@ -41,6 +41,8 @@ The project can be run by following these steps:
             return app(RegisterResponse::class);
         }
 // this page in path" ..vendor\laravel\fortify\src\Http\Controllers\RegisteredUserController.php"
+
+
 3. npm install
 4. cp .env.example .env
 5. create database in phpmyadmin same name the databaes in .evn file
