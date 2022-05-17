@@ -23019,3 +23019,10 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	
 /******/ })()
 ;
+
+function changeName(ele){
+  let id2 = ele.id.toString().concat('0');
+  let fileNameField = document.getElementById(id2);
+  let UploadedFileName = ele.files[0].name;
+  fileNameField.innerText = UploadedFileName;
+}
